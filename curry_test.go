@@ -38,6 +38,14 @@ func ExampleCurry_threeArgsTwoAtOnce() {
 	// Output: 7
 }
 
+func ExampleCurry_threeArgsSecondTwoAtOnce() {
+	curriedAdd := Curry(func(x, y, z int) int { return x + y + z })
+	add1 := dyn.Apply(curriedAdd, 1)
+	out := dyn.Apply(add1, 2, 4)
+	fmt.Println(out)
+	// Output: 7
+}
+
 func ExampleCurry_variadic() {
 	curriedAdd := Curry(func(x, y, z int, rest ...int) int {
 		out := x + y + z
@@ -49,4 +57,16 @@ func ExampleCurry_variadic() {
 	out := dyn.Apply(curriedAdd, 1, 2, 3, 4, 5)
 	fmt.Println(out)
 	// Output: 15
+}
+
+func ExampleCurry_isFunc() {
+	curriedAdd := Curry(func(x, y, z int, rest ...int) int {
+		out := x + y + z
+		for _, e := range rest {
+			out += e
+		}
+		return out
+	})
+	fmt.Printf("%T\n", curriedAdd)
+	// Output: func(...interface {}) interface {}
 }
