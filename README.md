@@ -2,7 +2,6 @@
 
 [![GoDoc](https://godoc.org/jsouthworth.net/go/curry?status.svg)](https://godoc.org/jsouthworth.net/go/curry)
 [![Build Status](https://travis-ci.org/jsouthworth/curry.svg?branch=master)](https://travis-ci.org/jsouthworth/curry)
-[![Coverage Status](https://coveralls.io/repos/github/jsouthworth/curry/badge.svg?branch=master)](https://coveralls.io/github/jsouthworth/curry?branch=master)
 
 This package provides arbitrary function currying for go programs.
 

@@ -3,8 +3,6 @@ sudo: false
 go:
   - tip
 go_import_path: jsouthworth.net/go/curry
-before_install:
-  - go get github.com/mattn/goveralls
 script:
-  - go test -v -coverprofile cover.out
-  - $GOPATH/bin/goveralls -service=travis-ci -v -coverprofile cover.out
+  - go test -v
+ 
