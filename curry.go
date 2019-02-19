@@ -1,5 +1,5 @@
 // Package curry provides function currying for go.
-package curry
+package curry // import "jsouthworth.net/go/curry"
 
 import (
 	"errors"
